@@ -1,0 +1,14 @@
+container:
+  image: fedora:25
+
+packages:
+  - make
+
+env:
+  SNOWMAN: ☃
+  COW: 🐄
+
+tests:
+  - echo $SNOWMAN
+  - echo $COW
+  - make LANG=français
