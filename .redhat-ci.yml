@@ -1,13 +1,7 @@
-cluster:
-  hosts:
-    - name: atomic-25-nightly
-      distro: fedora/25/atomic/nightly
-    - name: cloud-25-nightly
-      distro: fedora/25/cloud/nightly
-    - name: cloud-26-nightly
-      distro: fedora/26/cloud/nightly
+host:
+  distro: fedora/25/atomic/nightly
+  #distro: fedora/25/cloud/nightly
+  #distro: fedora/26/cloud/nightly
 
 tests:
   - rpm-ostree status
-  - ssh cloud-25-nightly rpm-ostree status
-  - ssh cloud-26-nightly rpm-ostree status
