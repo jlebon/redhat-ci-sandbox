@@ -1,8 +1,13 @@
-host:
-  distro: centos/7/atomic/continuous
-  ostree:
-    branch: centos-atomic-host/7/x86_64/devel/alpha
-    revision: 7.2017.141
+cluster:
+  hosts:
+    - name: atomic-25-nightly
+      distro: fedora/25/atomic/nightly
+    - name: cloud-25-nightly
+      distro: fedora/25/cloud/nightly
+    - name: cloud-26-nightly
+      distro: fedora/26/cloud/nightly
 
 tests:
   - rpm-ostree status
+  - ssh cloud-25-nightly rpm-ostree status
+  - ssh cloud-26-nightly rpm-ostree status
