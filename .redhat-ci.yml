@@ -1,0 +1,8 @@
+host:
+  distro: centos/7/atomic/continuous
+  ostree:
+    branch: centos-atomic-host/7/x86_64/devel/alpha
+    revision: 7.2017.141
+
+tests:
+  - rpm-ostree status
