@@ -1,7 +1,19 @@
-host:
-  distro: fedora/25/atomic/nightly
-  #distro: fedora/25/cloud/nightly
-  #distro: fedora/26/cloud/nightly
+cluster:
+  hosts:
+    - name: host1
+      distro: fedora/25/atomic
+    - name: host2
+      distro: fedora/25/atomic
+  container:
+    image: fedora:25
 
 tests:
-  - rpm-ostree status
+  - cat /etc/hosts
+  - getent ahostsv4 host1
+  - getent ahostsv4 host2
+  - ssh host1 cat /etc/hosts
+  - ssh host1 getent ahostsv4 host1
+  - ssh host1 getent ahostsv4 host2
+  - ssh host2 cat /etc/hosts
+  - ssh host2 getent ahostsv4 host1
+  - ssh host2 getent ahostsv4 host2
