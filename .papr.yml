@@ -1,0 +1,8 @@
+branches:
+  - master
+
+container:
+  image: registry.fedoraproject.org/fedora:26
+
+tests:
+  - echo hello world
