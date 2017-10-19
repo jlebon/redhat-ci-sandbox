@@ -1,8 +1,11 @@
 branches:
   - master
+  - auto
+  - try
 
 container:
   image: registry.fedoraproject.org/fedora:26
+
 
 tests:
   - echo hello world
