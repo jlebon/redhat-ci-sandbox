@@ -6,6 +6,6 @@ branches:
 container:
   image: registry.fedoraproject.org/fedora:26
 
-
 tests:
+  - env | sort
   - echo hello world
