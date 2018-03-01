@@ -1,13 +1,49 @@
 branches:
   - master
-  - auto
-  - try
+  - tmp
 
-container:
-  image: registry.fedoraproject.org/fedora:26
+pulls: false
 
 required: true
 
+    #cluster:
+    #  hosts:
+    #    - name: node1
+    #      distro: fedora/26/atomic
+    #    - name: node2
+    #      distro: fedora/26/atomic
+    #  container:
+    #    image: registry.fedoraproject.org/fedora:26
+    #host:
+    #  distro: fedora/26/atomic
+container:
+  image: registry.fedoraproject.org/fedora:27
+
+env:
+  MYENVVAR: asdf
+  SNOWMAN: ☃
+
+  #build: true
+
 tests:
-  - env | sort
+  #- sleep 10
+  #- exit 2
+  # - echo "asdf" > foobar.log
+  # - mkdir asdf
+  # - echo "zxcv" > asdf/zxcv.txt
   - echo hello world
+  - mkdir tmpd
+  - echo "asdfzxcv" > tmpf
+  - echo "qwerasdf" > tmpd/file
+
+    #timeout: 5s
+
+artifacts:
+  - tmpf
+  - tmpd/
+    #artifacts:
+    #  - foobar.log
+    #  - nonexistent
+    #  - asdf
+    #
+    #required: true
