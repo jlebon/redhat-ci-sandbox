@@ -3,11 +3,15 @@ branches:
   - auto
   - try
 
-container:
-  image: registry.fedoraproject.org/fedora:29
+host:
+  distro: fedora/29/atomic
+  specs:
+    secondary-disk: 10
 
 required: true
 
 tests:
   - env | sort
   - echo hello world
+  - findmnt
+  - fdisk -l
