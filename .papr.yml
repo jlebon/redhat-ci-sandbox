@@ -4,7 +4,7 @@ branches:
   - try
 
 container:
-  image: registry.fedoraproject.org/fedora:26
+  image: registry.fedoraproject.org/fedora:29
 
 required: true
 
