@@ -15,3 +15,12 @@ tests:
   - echo hello world
   - findmnt
   - fdisk -l
+
+---
+
+inherit: true
+
+container:
+  image: registry.fedoraproject.org/fedora:29
+
+context: Container Test
